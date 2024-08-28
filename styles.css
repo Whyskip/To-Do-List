@@ -1,5 +1,5 @@
 body {
-    background-color: #2e204b;
+    background-color: #161b27;
     color: #fff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
@@ -10,7 +10,7 @@ body {
     max-width: 500px;
     margin: 30px auto;
     padding: 20px;
-    background-color: #3f2b68;
+    background-color: #1f2635;
     border-radius: 10px;
 }
 
@@ -19,7 +19,7 @@ h1 {
 }
 
 input {
-    width: 80%;
+    width: 97%;
     padding: 8px;
     font-size: 16px;
     border: none;
@@ -28,10 +28,14 @@ input {
     justify-content: center;
 }
 
+#taskDescription {
+    margin-top: 10px;
+}
+
 button {
     padding: 8px 16px;
     font-size: 16px;
-    background-color: #563d91;
+    background-color: #161b27;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -46,20 +50,35 @@ ul {
 
 li {
     padding: 10px;
-    background-color: #66428f;
+    background-color: #3a4865;
     margin-bottom: 5px;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
 }
 
+p {
+    padding: 10px;
+    background-color: #ffffff;
+    color: #161b27;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
 li:hover {
-    background-color: #8656bc;
+    background-color: #566b97;
 }
 
 li span {
     flex: 1;
     text-align: left;
+}
+
+p:hover {
+    background-color: #dadada;
 }
 
 .deleteButton {
