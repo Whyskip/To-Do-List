@@ -6,6 +6,12 @@ body {
     padding: 0;
 }
 
+.menu ul li {
+    width: 20%;
+    height: 10%;
+    margin-top: 1%;
+}
+
 .container {
     max-width: 500px;
     margin: 30px auto;
