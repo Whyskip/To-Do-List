@@ -3,24 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
+    <title>Menu Lateral e Blocos de Notas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <aside class="menu">
-        <ul>Menu
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
+    <nav class="sidebar">
+        <h1>To Do List</h1>
+        <ul id="sidemenu">
+            <li><a href="#" onclick="switchPage(1)">Notas</a></li>
+            <li><a href="#" onclick="switchPage(2)">Olá</a></li>
+            <li><a href="#" onclick="switchPage(3)">Como vai</a></li>
         </ul>
-    </aside>
-    <div class="container">
-        <h1>Lista de Tarefas</h1>
-        <input type="text" id="taskInput" placeholder="Adicione uma tarefa...">
-        <input type="text" id="taskDescription" placeholder="Adicione uma descrição...">
-        <button onclick="addTask()">Adicionar</button>
-        <ul id="taskList"></ul>
+    </nav>
+    
+    <!-- Página 1 -->
+    <div class="container" id="page1">
+        <h2>Página 1</h2>
+        <div class="note">
+            <input type="text" placeholder="Título..." class="notetitle">
+            <textarea placeholder="Descrição..." class="notedescription"></textarea>
+        </div>
     </div>
+    <!-- Página 2 -->
+    <div class="container" id="page2">
+        <h2>Página 2</h2>
+        <div class="note">
+            <input type="text" placeholder="Título..." class="notetitle">
+            <textarea placeholder="Descrição..." class="notedescription"></textarea>
+        </div>
+    </div>
+    <!-- Página 3 -->
+    <div class="container" id="page3">
+        <h2>Página 3</h2>
+        <div class="note">
+            <input type="text" placeholder="Título..." class="notetitle">
+            <textarea placeholder="Descrição..." class="notedescription"></textarea>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
