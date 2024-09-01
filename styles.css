@@ -15,12 +15,33 @@ nav {
     background-color: white;
 }
 
+.sidebar h1 {
+    position: fixed;
+    font-size: 30px;
+    left: 5%;
+    top: 1.5%;
+}
+
 .sidebar ul {
     list-style: none;
+    position: fixed;
+    left: 0;
+    top: 10%;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
 }
 
 .sidebar ul li a {
     text-decoration: none;
+    color: black;
+    transition: color 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: none;
+    color: gray;
 }
 
 .container {
@@ -33,14 +54,20 @@ nav {
     height: 95%;
 }
 
-.container li {
+.sidebar li {
     list-style: none;
+}
+
+.container h2 {
+    position: fixed;
+    left: 25%;
 }
 
 .note {
     position: fixed;
     background-color: pink;
-    left: 23%;
+    left: 25%;
+    top: 11%;
     border-radius: 10px;
     padding: 15px;
     width: calc(25% - 20px);
