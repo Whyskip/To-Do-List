@@ -1,32 +1,29 @@
 body {
+    margin: 0;
     background-color: pink;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     display: flex;
 }
 
-nav {
+nav.sidebar{
+    width: 15%;
+    height: 100vh;
+    background-color: white;
     position: fixed;
     left: 0;
     top: 0;
-    width: 20%;
-    height: 100%;
-    background-color: white;
+    padding: 20px;
 }
 
 .sidebar h1 {
-    position: fixed;
+    margin: 0;
     font-size: 30px;
-    left: 5%;
-    top: 1.5%;
 }
 
 .sidebar ul {
     list-style: none;
-    position: fixed;
-    left: 0;
-    top: 10%;
+    padding: 0;
+    transition: color 0.2s ease;
 }
 
 .sidebar ul li {
@@ -40,18 +37,21 @@ nav {
 }
 
 .sidebar ul li a:hover {
-    text-decoration: none;
     color: gray;
 }
 
+.content {
+    margin-left: 20%;
+    padding: 20px;
+    width: 80%;
+}
+
 .container {
-    position: fixed;
-    background-color: rgb(255, 214, 221);
-    border-radius: 20px;
-    top: 3%;
-    left: 21.5%;
-    right: 1.5%;
-    height: 95%;
+    display: none; /* Esconde todas as páginas por padrão */
+}
+
+.container.active {
+    display: block; /* Mostra a página ativa */
 }
 
 .sidebar li {
@@ -60,23 +60,23 @@ nav {
 
 .container h2 {
     position: fixed;
-    left: 25%;
+    top: 1%;
+    left: 21.2%;
 }
 
 .note {
     position: fixed;
-    background-color: pink;
-    left: 25%;
-    top: 11%;
+    top: 10%; /* Quando for criar mais notas, temos que mudar esse fixed */
+    background-color: rgb(236, 153, 167);
     border-radius: 10px;
     padding: 15px;
-    width: calc(25% - 20px);
+    width: 20px;
     min-width: 250px;
     transition: background-color 0.5s ease;
 }
 
 .note:hover {
-    background-color: rgb(251, 120, 142);
+    background-color: #fb788e;
     color: white;
 }
 
