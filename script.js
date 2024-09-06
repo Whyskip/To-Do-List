@@ -63,15 +63,39 @@ function removePagePrompt() {
 }
 
 function removePage(pageNumber) {
+    // Verifica se a página a ser removida existe
     const pageToRemove = document.getElementById(`page${pageNumber}`);
     if (pageToRemove) {
-        pageToRemove.remove();
+        // Move o conteúdo das páginas subsequentes para preencher a página removida
+        for (let i = pageNumber + 1; i <= pageCount; i++) {
+            const currentPage = document.getElementById(`page${i}`);
+            if (currentPage) {
+                const previousPage = document.getElementById(`page${i - 1}`);
+                if (previousPage) {
+                    // Move o conteúdo e o HTML da página atual para a página anterior
+                    previousPage.innerHTML = currentPage.innerHTML;
+                    noteCount[i - 1] = noteCount[i]; // Atualiza o contador de notas
+                }
+                
+                // Remove a página atual
+                currentPage.remove();
+            }
+        }
+
+        // Remove o item do menu
         document.querySelector(`#sidemenu li:nth-child(${pageNumber})`).remove();
 
-        // Ajusta o contador de páginas e o menu lateral
+        // Atualiza o número total de páginas
         pageCount--;
-        noteCount[pageNumber] = undefined; // Limpa o contador de notas da página removida
+
+        // Atualiza o contador de notas da página removida
+        noteCount[pageNumber] = undefined;
+
+        // Atualiza o menu lateral
         updateMenu();
+
+        // Exibe a nova página 1
+        switchPage(1);
     }
 }
 
