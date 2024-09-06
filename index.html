@@ -14,32 +14,51 @@
             <li><a href="#" onclick="switchPage(2)">Página 2</a></li>
             <li><a href="#" onclick="switchPage(3)">Página 3</a></li>
         </ul>
-        <button onclick="addPage()">Adicionar Página</button> <!-- Botão para adicionar página -->
+        <button onclick="addPage()">Adicionar Página</button>
+        <button onclick="removePagePrompt()">Excluir Página</button>
     </nav>
 
     <div class="content">
         <!-- Página 1 -->
         <div class="container" id="page1">
             <h2>Página 1</h2>
-            <div class="note">
-                <input type="text" placeholder="Título..." class="notetitle">
-                <textarea placeholder="Descrição..." class="notedescription"></textarea>
+            <div class="note-controls">
+                <button onclick="addNoteToPage(1)">Adicionar Nota</button>
+                <button onclick="removeNotePrompt(1)">Excluir Nota</button>
+            </div>
+            <div class="notes-wrapper">
+                <div class="note" id="page1_note1">
+                    <input type="text" placeholder="Título..." class="notetitle">
+                    <textarea placeholder="Descrição..." class="notedescription"></textarea>
+                </div>
             </div>
         </div>
         <!-- Página 2 -->
         <div class="container" id="page2">
             <h2>Página 2</h2>
-            <div class="note">
-                <input type="text" placeholder="Título..." class="notetitle">
-                <textarea placeholder="Descrição..." class="notedescription"></textarea>
+            <div class="note-controls">
+                <button onclick="addNoteToPage(2)">Adicionar Nota</button>
+                <button onclick="removeNotePrompt(2)">Excluir Nota</button>
+            </div>
+            <div class="notes-wrapper">
+                <div class="note" id="page2_note1">
+                    <input type="text" placeholder="Título..." class="notetitle">
+                    <textarea placeholder="Descrição..." class="notedescription"></textarea>
+                </div>
             </div>
         </div>
         <!-- Página 3 -->
         <div class="container" id="page3">
             <h2>Página 3</h2>
-            <div class="note">
-                <input type="text" placeholder="Título..." class="notetitle">
-                <textarea placeholder="Descrição..." class="notedescription"></textarea>
+            <div class="note-controls">
+                <button onclick="addNoteToPage(3)">Adicionar Nota</button>
+                <button onclick="removeNotePrompt(3)">Excluir Nota</button>
+            </div>
+            <div class="notes-wrapper">
+                <div class="note" id="page3_note1">
+                    <input type="text" placeholder="Título..." class="notetitle">
+                    <textarea placeholder="Descrição..." class="notedescription"></textarea>
+                </div>
             </div>
         </div>
     </div>

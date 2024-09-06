@@ -5,7 +5,7 @@ body {
     display: flex;
 }
 
-nav.sidebar{
+nav.sidebar {
     width: 15%;
     height: 100vh;
     background-color: white;
@@ -48,30 +48,53 @@ nav.sidebar{
 
 .container {
     display: none; /* Esconde todas as páginas por padrão */
+    padding-top: 50px;
+    position: relative; /* Para posicionar os botões corretamente */
 }
 
 .container.active {
     display: block; /* Mostra a página ativa */
 }
 
-.sidebar li {
-    list-style: none;
+.container h2 {
+    margin-bottom: 10px;
 }
 
-.container h2 {
-    position: fixed;
-    top: 1%;
-    left: 21.2%;
+.note-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.note-controls button {
+    background-color: #f06292;
+    border: none;
+    padding: 10px;
+    color: white;
+    margin-left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.note-controls button:hover {
+    background-color: #d04877;
+}
+
+.notes-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as notas quebrem a linha */
+    margin-top: 50px; /* Ajuste para não sobrepor os botões de controle */
 }
 
 .note {
-    position: fixed;
-    top: 10%; /* Quando for criar mais notas, temos que mudar esse fixed */
     background-color: rgb(236, 153, 167);
     border-radius: 10px;
     padding: 15px;
-    width: 20px;
-    min-width: 250px;
+    width: 250px;
+    margin: 10px;
+    display: inline-block; /* Posiciona as notas lado a lado */
+    vertical-align: top;
     transition: background-color 0.5s ease;
 }
 
