@@ -20,12 +20,20 @@ function addPage() {
     pageCount++; // Incrementa o número total de páginas
     noteCount[pageCount] = 1; // Inicializa o contador de notas para a nova página
 
+    // Solicita o nome da nova página
+    const pageName = prompt("Digite o nome para a nova página:");
+    if (!pageName) {
+        alert('Nome da página não pode ser vazio.');
+        pageCount--; // Reverte o contador de páginas
+        return;
+    }
+
     // Cria a nova página
     const newPage = document.createElement('div');
     newPage.classList.add('container');
     newPage.id = `page${pageCount}`;
     newPage.innerHTML = `
-        <h2>Página ${pageCount}</h2>
+        <h2>${pageName}</h2>
         <div class="note-controls">
             <button onclick="addNoteToPage(${pageCount})">Adicionar Nota</button>
             <button onclick="removeNotePrompt(${pageCount})">Excluir Nota</button>
@@ -43,7 +51,7 @@ function addPage() {
 
     // Cria a nova entrada no menu lateral
     const newMenuItem = document.createElement('li');
-    newMenuItem.innerHTML = `<a href="#" onclick="switchPage(${pageCount})">Página ${pageCount}</a>`;
+    newMenuItem.innerHTML = `<a href="#" onclick="switchPage(${pageCount})">${pageName}</a>`;
 
     // Adiciona a nova entrada ao menu
     document.getElementById('sidemenu').appendChild(newMenuItem);
@@ -139,6 +147,31 @@ function updateMenu() {
         item.querySelector('a').innerHTML = `Página ${index + 1}`;
         item.querySelector('a').setAttribute('onclick', `switchPage(${index + 1})`);
     });
+}
+
+function renamePagePrompt() {
+    const pageNumber = prompt(`Digite o número da página que deseja renomear (1 a ${pageCount}):`);
+    
+    if (pageNumber && pageNumber >= 1 && pageNumber <= pageCount) {
+        const newName = prompt('Digite o novo nome para a página:');
+        
+        if (newName) {
+            renamePage(pageNumber, newName);
+        } else {
+            alert('O nome da página não pode ser vazio.');
+        }
+    } else {
+        alert('Número de página inválido.');
+    }
+}
+
+function renamePage(pageNumber, newName) {
+    const pageToRename = document.getElementById(`page${pageNumber}`);
+    if (pageToRename) {
+        const menuItem = document.querySelector(`#sidemenu li:nth-child(${pageNumber}) a`);
+        pageToRename.querySelector('h2').textContent = newName;
+        menuItem.textContent = newName;
+    }
 }
 
 window.onload = () => switchPage(1);

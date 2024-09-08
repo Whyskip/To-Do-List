@@ -15,15 +15,16 @@ nav.sidebar {
     padding: 20px;
 }
 
-.sidebar h1 {
+nav.sidebar h1 {
     margin: 0;
-    font-size: 30px;
+    font-size: 36px; /* Aumenta o tamanho da fonte para o título da sidebar */
+    font-weight: bold;
+    color: #f06292; /* Cor escura para o título */
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
-    transition: color 0.2s ease;
 }
 
 .sidebar ul li {
@@ -32,12 +33,16 @@ nav.sidebar {
 
 .sidebar ul li a {
     text-decoration: none;
-    color: black;
-    transition: color 0.2s ease;
+    color: #666; /* Cor cinza mais clara para os nomes das páginas */
+    font-size: 18px; /* Ajusta o tamanho da fonte */
+    font-weight: 500; /* Aumenta um pouco o peso da fonte para um efeito mais destacado */
+    transition: all 0.3s ease; /* Transição suave para a mudança de cor e tamanho ao passar o mouse */
+    display: inline-block; /* Garante que a transformação de escala funcione corretamente */
 }
 
 .sidebar ul li a:hover {
-    color: gray;
+    color: #f06292; /* Muda a cor ao passar o mouse para uma cor mais vibrante */
+    transform: scale(1.1); /* Aumenta o tamanho do texto ao passar o mouse */
 }
 
 nav button {
@@ -48,11 +53,12 @@ nav button {
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 nav button:hover {
     background-color: #d04877;
+    transform: scale(1.1);
 }
 
 .content {
@@ -72,7 +78,12 @@ nav button:hover {
 }
 
 .container h2 {
-    margin-bottom: 10px;
+    margin: 0;
+    margin-top: -35px;
+    font-size: 28px; /* Aumenta o tamanho da fonte para os títulos das páginas */
+    font-weight: bold;
+    color: #f06292; /* Cor rosa para destacar os títulos das páginas */
+    padding-bottom: 10px; /* Espaçamento inferior para separação */
 }
 
 .note-controls {
@@ -89,33 +100,37 @@ nav button:hover {
     margin-left: 5px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .note-controls button:hover {
     background-color: rgb(239, 239, 239);
+    transform: scale(1.1);
 }
 
 .notes-wrapper {
     display: flex;
     flex-wrap: wrap; /* Permite que as notas quebrem a linha */
-    margin-top: 50px; /* Ajuste para não sobrepor os botões de controle */
+    margin-left: -10px;
+    margin-top: 5px; /* Ajuste para não sobrepor os botões de controle */
 }
 
 .note {
-    background-color: rgb(236, 153, 167);
+    background-color: #f06292;
     border-radius: 10px;
     padding: 15px;
     width: 250px;
     margin: 10px;
     display: inline-block; /* Posiciona as notas lado a lado */
     vertical-align: top;
-    transition: background-color 0.5s ease;
+    box-shadow: 0 2px 5px #d24a7a; /* Sombra da nota */
+    transition: all 0.3s ease;
 }
 
 .note:hover {
-    background-color: #fb788e;
-    color: white;
+    background-color: #d04877;
+    transform: scale(1.1);
+    box-shadow: 0 30px 50px #d24a7a; /* Sombra da nota */
 }
 
 .notetitle {
