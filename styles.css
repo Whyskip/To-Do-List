@@ -40,6 +40,21 @@ nav.sidebar {
     color: gray;
 }
 
+nav button {
+    background-color: #f06292;
+    border: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #d04877;
+}
+
 .content {
     margin-left: 20%;
     padding: 20px;
@@ -67,10 +82,10 @@ nav.sidebar {
 }
 
 .note-controls button {
-    background-color: #f06292;
+    background-color: white;
     border: none;
     padding: 10px;
-    color: white;
+    color: #f06292;
     margin-left: 5px;
     border-radius: 5px;
     cursor: pointer;
@@ -78,7 +93,7 @@ nav.sidebar {
 }
 
 .note-controls button:hover {
-    background-color: #d04877;
+    background-color: rgb(239, 239, 239);
 }
 
 .notes-wrapper {
